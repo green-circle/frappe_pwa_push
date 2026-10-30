@@ -204,6 +204,7 @@ after_install = "frappe_pwa_push.setup.install.after_install"
 # app serves that same API; overrides resolve before import, so no `notification_relay`
 # module needs to exist.
 override_whitelisted_methods = {
+    "notification_relay.api.auth.verify_id_token": "frappe_pwa_push.relay.auth.verify_id_token",
 	"notification_relay.api.auth.get_credential": "frappe_pwa_push.relay.auth.get_credential",
 	"notification_relay.api.get_config": "frappe_pwa_push.relay.config.get_config",
 	"notification_relay.api.token.add": "frappe_pwa_push.relay.token.add",
