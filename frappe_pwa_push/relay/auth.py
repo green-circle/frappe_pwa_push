@@ -94,7 +94,7 @@ def _upsert_client_site(site_name: str, protocol: str, port: str, user: str) -> 
 	)
 
 
-@frappe.whitelist(allow_guest=True, methods=["POST"])
+@frappe.whitelist(methods=["POST"])
 def verify_id_token(id_token: str, project_name: str = None) -> dict:
     """
 	Verify a Firebase ID token using the Firebase Admin SDK.
